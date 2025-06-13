@@ -1,13 +1,9 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:recipeapp/HomeScreen/data/models/products.dart';
 
-
-
 class DetailScreen extends StatelessWidget {
   final Recipes recipe;
-  const DetailScreen({required this.recipe});
+  const DetailScreen({super.key, required this.recipe});
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -39,7 +35,7 @@ class DetailScreen extends StatelessWidget {
                   'Ingredients:',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                 ),
-                ...?recipe.ingredients?.map((ing) => Text('• \$ing')),
+                ...?recipe.ingredients?.map((ing) => Text('• $ing')),
                 SizedBox(height: 16),
                 if (recipe.instructions != null) ...[
                   Text(
